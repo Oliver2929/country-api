@@ -141,21 +141,21 @@ Last Refresh: ${latest.last}
 `;
 
     const svg = `
-      <svg width="600" height="300" xmlns="http://www.w3.org/2000/svg">
-        <style>
-          text { font-family: Arial, sans-serif; font-size: 16px; fill: #333; }
-        </style>
-        <rect width="100%" height="100%" fill="white"/>
-        <text x="20" y="40">${summaryText
-          .split('\n')
-          .map(
-            (line, i) =>
-              `<tspan x="20" dy="${i === 0 ? 0 : 22}">${line}</tspan>`,
-          )
-          .join('')}
-        </text>
-      </svg>
-    `;
+  <svg width="600" height="300" xmlns="http://www.w3.org/2000/svg">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+      text { font-family: 'Roboto', sans-serif; font-size: 16px; fill: #333; }
+    </style>
+    <rect width="100%" height="100%" fill="white"/>
+    <text x="20" y="40">${summaryText
+      .split('\n')
+      .map(
+        (line, i) => `<tspan x="20" dy="${i === 0 ? 0 : 22}">${line}</tspan>`,
+      )
+      .join('')}
+    </text>
+  </svg>
+`;
 
     const outputDir = path.resolve('cache');
     if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir);
